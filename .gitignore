@@ -1,0 +1,12 @@
+target/
+.idea/
+*.iml
+*.ipr
+*.iws
+VERSION
+Version.java
+backups/
+*.log
+dependency-reduced-pom.xml
+
+

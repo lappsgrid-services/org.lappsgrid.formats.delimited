@@ -1,0 +1,277 @@
+{
+    "discriminator": "http://vocab.lappsgrid.org/ns/media/jsonld#lif",
+    "payload": {
+        "@context": "http://vocab.lappsgrid.org/context-1.0.0.jsonld",
+        "metadata": {
+
+        },
+        "text": {
+            "@value": "Karen flew to New York yesterday. Today Nancy flew to Bloomington.",
+            "@language": "en"
+        },
+        "views": [
+            {
+                "id": "v1",
+                "metadata": {
+                    "timestamp": "2019-07-08T17:25:46.794Z[UTC]",
+                    "contains": {
+                        "http://vocab.lappsgrid.org/Sentence": {
+                            "producer": "org.lappsgrid.eager.mining.web.nlp.stanford.Pipeline",
+                            "type": "stanford"
+                        }
+                    }
+                },
+                "annotations": [
+                    {
+                        "id": "s-0",
+                        "start": 0,
+                        "end": 33,
+                        "@type": "http://vocab.lappsgrid.org/Sentence"
+                    },
+                    {
+                        "id": "s-1",
+                        "start": 34,
+                        "end": 66,
+                        "@type": "http://vocab.lappsgrid.org/Sentence"
+                    }
+                ]
+            },
+            {
+                "id": "v2",
+                "metadata": {
+                    "timestamp": "2019-07-08T17:25:46.795Z[UTC]",
+                    "contains": {
+                        "http://vocab.lappsgrid.org/Token": {
+                            "producer": "org.lappsgrid.eager.mining.web.nlp.stanford.Pipeline",
+                            "type": "stanford"
+                        },
+                        "http://vocab.lappsgrid.org/Token#pos": {
+                            "producer": "org.lappsgrid.eager.mining.web.nlp.stanford.Pipeline",
+                            "type": "stanford"
+                        },
+                        "http://vocab.lappsgrid.org/Token#lemma": {
+                            "producer": "org.lappsgrid.eager.mining.web.nlp.stanford.Pipeline",
+                            "type": "stanford"
+                        }
+                    }
+                },
+                "annotations": [
+                    {
+                        "id": "tok-0",
+                        "start": 0,
+                        "end": 5,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "Karen",
+                            "pos": "NNP",
+                            "word": "Karen"
+                        }
+                    },
+                    {
+                        "id": "tok-1",
+                        "start": 6,
+                        "end": 10,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "fly",
+                            "pos": "VBD",
+                            "word": "flew"
+                        }
+                    },
+                    {
+                        "id": "tok-2",
+                        "start": 11,
+                        "end": 13,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "to",
+                            "pos": "TO",
+                            "word": "to"
+                        }
+                    },
+                    {
+                        "id": "tok-3",
+                        "start": 14,
+                        "end": 17,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "New",
+                            "pos": "NNP",
+                            "word": "New"
+                        }
+                    },
+                    {
+                        "id": "tok-4",
+                        "start": 18,
+                        "end": 22,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "York",
+                            "pos": "NNP",
+                            "word": "York"
+                        }
+                    },
+                    {
+                        "id": "tok-5",
+                        "start": 23,
+                        "end": 32,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "yesterday",
+                            "pos": "NN",
+                            "word": "yesterday"
+                        }
+                    },
+                    {
+                        "id": "tok-6",
+                        "start": 32,
+                        "end": 33,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": ".",
+                            "pos": ".",
+                            "word": "."
+                        }
+                    },
+                    {
+                        "id": "tok-7",
+                        "start": 34,
+                        "end": 39,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "today",
+                            "pos": "NN",
+                            "word": "Today"
+                        }
+                    },
+                    {
+                        "id": "tok-8",
+                        "start": 40,
+                        "end": 45,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "Nancy",
+                            "pos": "NNP",
+                            "word": "Nancy"
+                        }
+                    },
+                    {
+                        "id": "tok-9",
+                        "start": 46,
+                        "end": 50,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "fly",
+                            "pos": "VBD",
+                            "word": "flew"
+                        }
+                    },
+                    {
+                        "id": "tok-10",
+                        "start": 51,
+                        "end": 53,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "to",
+                            "pos": "TO",
+                            "word": "to"
+                        }
+                    },
+                    {
+                        "id": "tok-11",
+                        "start": 54,
+                        "end": 65,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": "Bloomington",
+                            "pos": "NNP",
+                            "word": "Bloomington"
+                        }
+                    },
+                    {
+                        "id": "tok-12",
+                        "start": 65,
+                        "end": 66,
+                        "@type": "http://vocab.lappsgrid.org/Token",
+                        "features": {
+                            "lemma": ".",
+                            "pos": ".",
+                            "word": "."
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "v3",
+                "metadata": {
+                    "timestamp": "2019-07-08T17:25:46.795Z[UTC]",
+                    "contains": {
+                        "http://vocab.lappsgrid.org/NamedEntity": {
+                            "producer": "org.lappsgrid.eager.mining.web.nlp.stanford.Pipeline",
+                            "type": "stanford"
+                        }
+                    }
+                },
+                "annotations": [
+                    {
+                        "id": "ner-0",
+                        "start": 0,
+                        "end": 5,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "PERSON"
+                        }
+                    },
+                    {
+                        "id": "ner-1",
+                        "start": 14,
+                        "end": 22,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "STATE_OR_PROVINCE"
+                        }
+                    },
+                    {
+                        "id": "ner-2",
+                        "start": 23,
+                        "end": 32,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "DATE"
+                        }
+                    },
+                    {
+                        "id": "ner-3",
+                        "start": 34,
+                        "end": 39,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "DATE"
+                        }
+                    },
+                    {
+                        "id": "ner-4",
+                        "start": 40,
+                        "end": 45,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "PERSON"
+                        }
+                    },
+                    {
+                        "id": "ner-5",
+                        "start": 54,
+                        "end": 65,
+                        "@type": "http://vocab.lappsgrid.org/NamedEntity",
+                        "features": {
+                            "category": "CITY"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "parameters": {
+
+    }
+}
