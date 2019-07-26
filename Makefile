@@ -41,8 +41,8 @@ tag:
 	docker push $(REPO)/$(GROUP)/$(IMAGE):$(VERSION)
 
 update:
-	echo "Not implemented yet."
-	#curl -X POST http://129.114.17.83:9000/api/webhooks/71f3953f-1c43-42aa-99a6-ab1cd55dc85e
+	#echo "Not implemented yet."
+	curl -X POST http://129.114.17.83:9000/api/webhooks/a19d7401-99a2-43cc-b1cb-8b2e035e8e83
 
 all: clean jar docker 
 
