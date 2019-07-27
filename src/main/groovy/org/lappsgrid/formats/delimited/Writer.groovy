@@ -66,8 +66,12 @@ class Writer {
 
     }
 
-    String print(Annotation a) {
+    String print_entity(Annotation a) {
         return [ a.features.word, a.start, a.end, docId, a.features.pos, a.features.shape ].join(sep)
+    }
+
+    String print(Annotation a) {
+        return [ a.features.word, a.start, a.end, a.features.pos, a.features.shape ].join(sep)
     }
 
     List<Annotation> combine(Container container) {
