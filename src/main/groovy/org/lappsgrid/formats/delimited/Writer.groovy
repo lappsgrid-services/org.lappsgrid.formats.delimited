@@ -15,6 +15,7 @@ class Writer {
 
     private String sep
     private int windowSize
+    private String docId
 
     Writer(int windowSize=1, String sep=',') {
         this.sep = sep
@@ -22,6 +23,7 @@ class Writer {
     }
 
     String process(Container container) {
+        docId = container.metadata.id ?: container.metadata.docId ?: UUID.randomUUID().toString()
         StringWriter string = new StringWriter()
         PrintWriter writer = new PrintWriter(string)
 
@@ -36,7 +38,7 @@ class Writer {
         }
 
         // Print the header row.
-        writer.print("SPAN\tPOS\tSHAPE")
+        writer.print("SPAN\tSTART\tEND\tID\tPOS\tSHAPE")
         for (int i = windowSize; i > 0; --i) {
             writer.print("\tWORD-$i\tPOS-$i\tSHAPE-$i")
         }
@@ -65,7 +67,7 @@ class Writer {
     }
 
     String print(Annotation a) {
-        return [ a.features.word, a.features.pos, a.features.shape ].join(sep)
+        return [ a.features.word, a.start, a.end, docId, a.features.pos, a.features.shape ].join(sep)
     }
 
     List<Annotation> combine(Container container) {

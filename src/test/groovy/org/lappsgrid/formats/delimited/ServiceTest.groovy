@@ -29,7 +29,8 @@ class ServiceTest {
     void test() {
         Object lock = new Object()
         PostOffice po = new PostOffice(config.EXCHANGE, config.RABBIT_HOST)
-//        DelimitedFileWorker service = new DelimitedFileWorker()
+//        DelimitedFileWorker service =
+        new DelimitedFileWorker()
 //        sleep(500)
 
         String mailbox = UUID.randomUUID().toString()

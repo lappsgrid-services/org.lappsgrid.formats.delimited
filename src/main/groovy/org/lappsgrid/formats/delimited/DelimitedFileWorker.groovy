@@ -65,6 +65,7 @@ class DelimitedFileWorker extends MessageBox {
                 sep = map.separator
             }
         }
+
         Data data = Serializer.parse(message.body)
         Container container = new Container(data.payload)
         annotator.process(container)
