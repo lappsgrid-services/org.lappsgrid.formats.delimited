@@ -38,14 +38,14 @@ class Writer {
         }
 
         // Print the header row.
-        writer.print("ENTITY\tSTART\tEND\tID\tPOS\tSHAPE")
+        writer.print("ENTITY${sep}START${sep}END${sep}ID${sep}POS${sep}SHAPE")
         for (int i = windowSize; i > 0; --i) {
-            writer.print("\tWORD-$i\tPOS-$i\tSHAPE-$i")
+            writer.print("${sep}WORD-$i${sep}POS-$i${sep}SHAPE-$i")
         }
         for (int i = 1; i <= windowSize; ++i) {
-            writer.print("\tWORD+$i\tPOS+$i\tSHAPE+$i")
+            writer.print("${sep}WORD+$i${sep}POS+$i${sep}SHAPE+$i")
         }
-        writer.println("\tCATEGORY")
+        writer.println("${sep}CATEGORY")
         for (int i = windowSize; i < length; ++i) {
             Annotation a = annotations[i]
             String cat = a.features.category
