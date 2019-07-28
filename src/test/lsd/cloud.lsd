@@ -1,2 +1,27 @@
-println "Hello world."
 
+File file = new File("src/test/resources/karen-ner.lif")
+if (!file.exists()) {
+	println "Input file not found."
+	return
+}
+String json = file.text
+Data data = Serializer.parse(json)
+data.payload.metadata.id = "karen-ner.lif"
+data.setParameter("size", 1)
+data.setParameter("separator", "|")
+json = data.asJson()
+
+//String url = "http://localhost:8080/delimited-soap-1.0.0-SNAPSHOT/services/Delimited"
+String url = "http://129.114.17.83:8083/delimited-soap-1.0.0-SNAPSHOT/services/Delimited"
+ServiceClient client = new ServiceClient(url, "tester", "tester")
+
+json = client.execute(json)
+data = Serializer.parse(json)
+
+if (Uri.ERROR == data.discriminator) {
+    println "There was an error processing the document"
+    println data.payload
+    return
+}
+
+println data.payload

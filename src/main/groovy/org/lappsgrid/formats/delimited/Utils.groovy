@@ -15,7 +15,7 @@ class Utils {
     static List<Annotation> findAnnotations(Container container, String type) {
         List<View> views = container.findViewsThatContain(type)
         if (views.size() == 0) {
-            return []
+            return findAnnotations2(container, type)
         }
         View view = views[-1]
         return view.annotations.findAll { it.atType == type }
@@ -30,6 +30,15 @@ class Utils {
         return container.text.substring(start, end)
     }
 
-
+    List<Annotation> findAnnotations2(Container container, String type) {
+        for (View view : container.views) {
+            for (Annotation a : view.annotations) {
+                if (a.atType == type) {
+                    return view.annotations.findAll{ it.atType == type }
+                }
+            }
+        }
+        return []
+    }
     protected Utils() {}
 }
