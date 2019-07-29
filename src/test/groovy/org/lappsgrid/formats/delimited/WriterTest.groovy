@@ -20,25 +20,30 @@ import org.lappsgrid.serialization.lif.View
 class WriterTest {
 
     @Test
-    void writer() {
-        InputStream stream = this.class.getResourceAsStream("/lemmatized.lif")
+    void inception() {
+        InputStream stream = this.class.getResourceAsStream("/inception.lif")
         Data data = Serializer.parse(stream.text)
         Container container = new Container(data.payload)
         Writer writer = new Writer()
         println writer.process(container)
     }
 
-    @Test
+    @Ignore
+    void rewrite() {
+        InputStream stream = this.class.getResourceAsStream("/inception.lif")
+        Data data = Serializer.parse(stream.text)
+        println data.asPrettyJson()
+    }
+
     void size3() {
         InputStream stream = this.class.getResourceAsStream("/lemmatized.lif")
         Data data = Serializer.parse(stream.text)
         Container container = new Container(data.payload)
         int three = 3
-        Writer writer = new Writer(extractors, three)
+        Writer writer = new Writer(three)
         println writer.process(container)
     }
 
-    @Test
     void mergeNER() {
         InputStream stream = this.class.getResourceAsStream("/karen-ner.lif")
         Data data = Serializer.parse(stream.text)

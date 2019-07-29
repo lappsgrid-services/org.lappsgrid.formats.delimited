@@ -17,8 +17,11 @@ class WordShapeAnnotator {
         List<Annotation> tokens = Utils.findAnnotations(container, Uri.TOKEN)
         int count = 0
         tokens.each { Annotation token ->
+            if (token.features.word == null) {
+                token.features.word = string(text,token)
+            }
+            String word = token.features.word
             if (token.features.shape == null) {
-                String word = string(text, token)
                 String shape = "mixed"
                 int uc = countUppercase(word)
                 if (uc == 0) {

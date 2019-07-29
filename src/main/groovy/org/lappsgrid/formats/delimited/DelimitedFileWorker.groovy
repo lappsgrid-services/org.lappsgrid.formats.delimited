@@ -25,13 +25,13 @@ class DelimitedFileWorker extends MessageBox {
         System.setProperty("RABBIT_PASSWORD", config.PASSWORD)
     }
 
-    WordShapeAnnotator annotator
+//    WordShapeAnnotator annotator
     PostOffice po
     Object lock
 
     DelimitedFileWorker() {
         super(config.EXCHANGE, config.MAILBOX, config.RABBIT_HOST)
-        annotator = new WordShapeAnnotator()
+//        annotator = new WordShapeAnnotator()
         po = new PostOffice(config.EXCHANGE, config.RABBIT_HOST)
         logger.info("Started the DelimitedFileWorker service.")
         logger.debug("Host: {}", config.RABBIT_HOST)
@@ -68,7 +68,7 @@ class DelimitedFileWorker extends MessageBox {
 
         Data data = Serializer.parse(message.body)
         Container container = new Container(data.payload)
-        annotator.process(container)
+//        annotator.process(container)
         Writer writer = new Writer(size, sep)
         String tsv = writer.process(container)
         data = new Data(Uri.TSV, tsv)

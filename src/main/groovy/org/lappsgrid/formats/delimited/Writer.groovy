@@ -13,17 +13,22 @@ import static org.lappsgrid.discriminator.Discriminators.Uri
  */
 class Writer {
 
+    private WordShapeAnnotator shapeAnnotator
     private String sep
     private int windowSize
     private String docId
 
-    Writer(int windowSize=1, String sep=',') {
+    Writer(int windowSize=1, String sep='\t') {
         this.sep = sep
         this.windowSize = windowSize
+        this.shapeAnnotator = new WordShapeAnnotator()
     }
 
     String process(Container container) {
-        docId = container.metadata.id ?: container.metadata.docId ?: UUID.randomUUID().toString()
+        shapeAnnotator.process(container)
+        docId = container.metadata.id;
+        if (docId == null) docId = container.metadata.docId
+        if (docId == null) docId = UUID.randomUUID().toString()
         StringWriter string = new StringWriter()
         PrintWriter writer = new PrintWriter(string)
 
@@ -38,20 +43,20 @@ class Writer {
         }
 
         // Print the header row.
-        writer.print("ENTITY${sep}START${sep}END${sep}ID${sep}POS${sep}SHAPE")
+        writer.print("Entity${sep}Start${sep}Stop${sep}Id${sep}Pos${sep}Shape")
         for (int i = windowSize; i > 0; --i) {
-            writer.print("${sep}WORD-$i${sep}POS-$i${sep}SHAPE-$i")
+            writer.print("${sep}Word(-$i)${sep}Pos(-$i)${sep}Shape(-$i)")
         }
         for (int i = 1; i <= windowSize; ++i) {
-            writer.print("${sep}WORD+$i${sep}POS+$i${sep}SHAPE+$i")
+            writer.print("${sep}Word(+$i)${sep}Pos(+$i)${sep}Shape(+$i)")
         }
-        writer.println("${sep}CATEGORY")
+        writer.println("${sep}Category")
         for (int i = windowSize; i < length; ++i) {
             Annotation a = annotations[i]
             String cat = a.features.category
             if (cat != null) {
                 List strings = []
-                strings.add(print(a))
+                strings.add(print_entity(a))
                 for (int j = i-windowSize; j < i; ++j)  {
                     strings.add(print(annotations[j]))
                 }
@@ -71,7 +76,7 @@ class Writer {
     }
 
     String print(Annotation a) {
-        return [ a.features.word, a.start, a.end, a.features.pos, a.features.shape ].join(sep)
+        return [ a.features.word, a.features.pos, a.features.shape ].join(sep)
     }
 
     List<Annotation> combine(Container container) {
