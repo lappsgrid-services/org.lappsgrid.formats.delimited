@@ -70,11 +70,11 @@ class DelimitedFileWorker extends MessageBox {
         Dictionary dictionary = null
         List<String> strings = (List) data.getParameter("dictionary")
         if (strings != null && strings.size() > 0) {
-            dictionary = new Dictionary(strings)
+            dictionary = new org.lappsgrid.formats.delimited.Dictionary(strings)
         }
         Container container = new Container(data.payload)
 //        annotator.process(container)
-        Writer writer = new Writer(size, sep)
+        Writer writer = new Writer(dictionary,size, sep)
         String tsv = writer.process(container)
         data = new Data(Uri.TSV, tsv)
         message.body(data.asJson())
