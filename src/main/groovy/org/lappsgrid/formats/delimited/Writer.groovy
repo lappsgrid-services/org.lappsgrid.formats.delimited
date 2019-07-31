@@ -65,7 +65,12 @@ class Writer {
                 for (int j = i+1; j < i+windowSize+1; ++j) {
                     strings.add(print(annotations[j]))
                 }
-                strings.add(cat)
+                if (dictionary) {
+                    strings.add(dictionary.lookup(cat))
+                }
+                else {
+                    strings.add(cat)
+                }
                 writer.println(strings.join(sep))
             }
         }
