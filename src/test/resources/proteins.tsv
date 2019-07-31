@@ -1,0 +1,48 @@
+Entity	Start	Stop	Id	Pos	Shape	Word(-2)	Pos(-2)	Shape(-2)	Word(-1)	Pos(-1)	Shape(-1)	Word(+1)	Pos(+1)	Shape(+1)	Word(+2)	Pos(+2)	Shape(+2)	Category
+SerpinB2 Reporter Gene	16	38	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_NN	mixed_capitalized_capitalized	Construction	NN	capitalized	of	IN	lower	Plasmids	NNS	capitalized	The	DT	capitalized	Protein
+DW5’LUC	64	71	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_''_NNP	mixed_punct_upper	PCR	NN	upper	primers	NNS	lower	,	,	punct	containing	VBG	lower	Protein
+Kpn I restriction site	86	108	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP_NN_NN	capitalized_capitalized_lower_lower	containing	VBG	lower	a	DT	lower	,	,	punct	and	CC	lower	Protein
+DW3’LUC	114	121	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_''_NNP	mixed_punct_upper	,	,	punct	and	CC	lower	,	,	punct	containing	VBG	lower	Protein
+Xho I restriction site	137	159	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP_NN_NN	capitalized_capitalized_lower_lower	containing	VBG	lower	an	DT	lower	,	,	punct	were	VBD	lower	Protein
+SerpinB2 promoter	200	217	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	mixed_lower	clone	NN	lower	the	DT	lower	-LRB-	-LRB-	mixed	−	CD	punct	Protein
+Kpn I/Xho I polylinker restriction sites	255	295	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NNP_NNP_PRP_VBP_NN_NNS	capitalized_mixed_capitalized_lower_lower_lower	into	IN	lower	the	DT	lower	of	IN	lower	pGL3	NN	mixed	Protein
+EcoR I insert of pDB9402-42	347	374	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP_VBP_IN_NN	mixed_capitalized_lower_lower_mixed	.	.	punct	The	DT	capitalized	was	VBD	lower	sub-cloned	JJ	lower	Protein
+SerpinB2 promoter EcoR I site	418	447	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_NN_NN_NN	mixed_lower_mixed_capitalized_lower	of	IN	lower	the	DT	lower	-LRB-	-LRB-	mixed	−	CD	punct	Protein
+SerpinB2 luciferase reporter constructs	511	550	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_NN_NNS	mixed_lower_lower_lower	Additional	JJ	capitalized	murine	JJ	lower	-LRB-	-LRB-	mixed	pGLmP-2751	NN	mixed	Protein
+EcoR I	680	686	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_CD	mixed_capitalized	pGLmP-3261	NN	mixed	with	IN	lower	and	CC	lower	a	DT	lower	Protein
+Sfi I	720	725	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_CD	capitalized_capitalized	enzyme	NN	lower	-LRB-	-LRB-	mixed	,	,	punct	Apa I	NN_PRP	capitalized_capitalized	Protein
+Apa I	727	732	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP	capitalized_capitalized	Sfi I	NN_CD	capitalized_capitalized	,	,	punct	,	,	punct	BstX I, Bsu36 I	NN_NN_,_NN_NN	mixed_capitalized_punct_capitalized_capitalized	Protein
+BstX I, Bsu36 I	734	749	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_,_NN_NN	mixed_capitalized_punct_capitalized_capitalized	Apa I	NN_PRP	capitalized_capitalized	,	,	punct	,	,	punct	Pac I	NN_PRP	capitalized_capitalized	Protein
+Pac I	751	756	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP	capitalized_capitalized	BstX I, Bsu36 I	NN_NN_,_NN_NN	mixed_capitalized_punct_capitalized_capitalized	,	,	punct	,	,	punct	Hae III	NNP_NNP	capitalized_upper	Protein
+Hae III	758	765	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NNP_NNP	capitalized_upper	Pac I	NN_PRP	capitalized_capitalized	,	,	punct	and	CC	lower	Apo I respectively)	NNP_PRP_RB_-RRB-	capitalized_capitalized_lower_mixed	Protein
+Apo I respectively)	770	789	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NNP_PRP_RB_-RRB-	capitalized_capitalized_lower_mixed	Hae III	NNP_NNP	capitalized_upper	and	CC	lower	,	,	punct	blunt	JJ	lower	Protein
+T4 DNA polymerase	842	859	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_NN	capitalized_upper_lower	overhangs	NNS	lower	with	IN	lower	-LRB-	-LRB-	mixed	NEB	NN	upper	Protein
+T4 DNA ligase	903	916	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN_NN	capitalized_upper_lower	ends	VBZ	lower	with	IN	lower	.	.	punct	The	DT	capitalized	Protein
+PCR primers BSPCR2	922	940	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NNS_NN	upper_lower_mixed	.	.	punct	The	DT	capitalized	and	CC	lower	DW3’LUC	NN_''_NNP	mixed_punct_upper	Protein
+DW3’LUC	945	952	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_''_NNP	mixed_punct_upper	PCR primers BSPCR2	NN_NNS_NN	upper_lower_mixed	and	CC	lower	were	VBD	lower	used	VBN	lower	Protein
+Kpn I/Xho I polylinker restriction sites	1032	1072	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NNP_NNP_PRP_VBP_NN_NNS	capitalized_mixed_capitalized_lower_lower_lower	into	IN	lower	the	DT	lower	of	IN	lower	pGL3	NN	mixed	Protein
+SerpinB2 promoter	1218	1235	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	mixed_lower	in	IN	lower	the	DT	lower	LPS-responsive	JJ	mixed	regions	NNS	lower	Protein
+PU.1	1266	1270	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	upper_lower	box	NN	lower	,	,	punct	,	,	punct	Oct-1	NN	capitalized	Protein
+Oct-1	1272	1277	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	capitalized	PU.1	NN_NN	upper_lower	,	,	punct	and	CC	lower	C/EBP	NN	mixed	Protein
+C/EBP	1282	1287	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	Oct-1	NN	capitalized	and	CC	lower	-LRB-	-LRB-	mixed	pGLmP-539mEbox	NN	mixed	Protein
+pGLmP-539mPU.1	1305	1319	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mEbox	NN	mixed	,	,	punct	,	,	punct	pGLmP-539mOct	NN	mixed	Protein
+pGLmP-539mOct	1321	1334	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mPU.1	NN	mixed	,	,	punct	and	CC	lower	pGLmP-539mC/EBP	NN_:_NN	mixed_punct_upper	Protein
+pGLmP-539mC/EBP	1339	1354	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_:_NN	mixed_punct_upper	pGLmP-539mOct	NN	mixed	and	CC	lower	respectively	RB	lower	-RRB-	-RRB-	mixed	Protein
+S1	1472	1474	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	capitalized	Fig	NN	capitalized	.	.	punct	,	,	punct	and	CC	lower	Protein
+mPAI2mEboxa	1518	1529	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mEbox	NN	mixed	:	:	punct	and	CC	lower	mPAI2mEboxb	NN	mixed	Protein
+mPAI2mEboxb	1534	1545	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	mPAI2mEboxa	NN	mixed	and	CC	lower	;	:	punct	pGLmP-539mPU.1	NN	mixed	Protein
+mPAI2mOct-2a	1607	1619	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mOct	NN	mixed	:	:	punct	and	CC	lower	mPAI2mOct-2b	NN	mixed	Protein
+mPAI2mOct-2b	1624	1636	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	mPAI2mOct-2a	NN	mixed	and	CC	lower	;	:	punct	pGLmP-539mC/EBP	NN_:_NN	mixed_punct_upper	Protein
+pGLmP-539mC/EBP	1638	1653	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_:_NN	mixed_punct_upper	mPAI2mOct-2b	NN	mixed	;	:	punct	:	:	punct	mPAI2mCEBPa	NN	mixed	Protein
+mPAI2mCEBPa	1655	1666	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mC/EBP	NN_:_NN	mixed_punct_upper	:	:	punct	and	CC	lower	mPAI2mCEBPb	NN	mixed	Protein
+mPAI2mCEBPb	1671	1682	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	mPAI2mCEBPa	NN	mixed	and	CC	lower	.	.	punct	The	DT	capitalized	Protein
+pGLmP-539mCRE	1742	1755	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	mutants	NNS	lower	,	,	punct	,	,	punct	pGLmP-539mAP-1a	NN	mixed	Protein
+pGLmP-539mAP-1a	1757	1772	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	pGLmP-539mCRE	NN	mixed	,	,	punct	,	,	punct	and	CC	lower	Protein
+pGLmP-539mAP-1b	1778	1793	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	,	,	punct	and	CC	lower	were	VBD	lower	reported	VBN	lower	Protein
+GLprimer2	1895	1904	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN	mixed	-RRB-	-RRB-	mixed	and	CC	lower	-LRB-	-LRB-	mixed	Promega	NN	capitalized	Protein
+Recombinant PCR products	1965	1989	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	JJ_NN_NNS	capitalized_upper_lower	case	NN	lower	.	.	punct	were	VBD	lower	digested	VBN	lower	Protein
+EcoR I	2009	2015	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	mixed_capitalized	digested	VBN	lower	with	IN	lower	and	CC	lower	Xho I	NN_NN	capitalized_capitalized	Protein
+Xho I	2020	2025	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	capitalized_capitalized	EcoR I	NN_NN	mixed_capitalized	and	CC	lower	and	CC	lower	cloned	VBN	lower	Protein
+EcoR I	2049	2055	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_NN	mixed_capitalized	between	IN	lower	the	DT	lower	and	CC	lower	Xho I restriction sites	NN_PRP_NN_NNS	capitalized_capitalized_lower_lower	Protein
+Xho I restriction sites	2060	2083	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	NN_PRP_NN_NNS	capitalized_capitalized_lower_lower	EcoR I	NN_NN	mixed_capitalized	and	CC	lower	of	IN	lower	pGLmP-539	NN	mixed	Protein
+wild-type murine SerpinB2 promoter	2136	2170	acee48f8-b6f0-43f7-9db1-5d6f170c1e92	JJ_JJ_NN_NN	lower_lower_mixed_lower	of	IN	lower	the	DT	lower	.	.	punct	Sequence	NN	capitalized	Protein
