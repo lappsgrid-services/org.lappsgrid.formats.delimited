@@ -83,4 +83,5 @@ class WriterTest {
         View view = views[-1]
         return view.annotations.findAll { it.atType == type }
     }
+
 }

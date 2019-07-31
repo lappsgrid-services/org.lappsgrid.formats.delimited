@@ -70,4 +70,57 @@ class ServiceTest {
 
         println "Done."
     }
+
+    @Test
+    void withDictionary() {
+        Thread.start {
+            new DelimitedFileWorker()
+        }
+        println "Waiting"
+        sleep(500)
+        println "Loading dictionary"
+        InputStream stream = this.class.getResourceAsStream("/dictionary.txt")
+        List<String> wordList = stream.readLines()
+
+        println "Loading LIF"
+        stream = this.class.getResourceAsStream("/karen-ner.lif")
+        Data data = Serializer.parse(stream.text)
+//        data.setParameter("dictionary", wordList)
+
+        Object lock = new Object()
+
+        println "Creating PO and mailbox"
+        String returnAddress = UUID.randomUUID().toString()
+        MessageBox box = new MessageBox(config.EXCHANGE, returnAddress, config.RABBIT_HOST) {
+
+            @Override
+            void recv(Message message) {
+                Data d = Serializer.parse(message.body)
+                println d.payload
+                synchronized (lock) {
+                    lock.notifyAll()
+                }
+            }
+        }
+        PostOffice po = new PostOffice(config.EXCHANGE, config.RABBIT_HOST)
+        sleep(200)
+
+        Message message = new Message()
+            .body(data.asJson())
+            .route(config.MAILBOX+"test", returnAddress)
+
+        println "Sending message"
+        po.send(message)
+        synchronized (lock) {
+            lock.wait()
+        }
+
+        println "Sending quit"
+        message = new Message().command("QUIT").route(config.MAILBOX+"test")
+        po.send(message)
+        po.close()
+        box.close()
+        println "Done."
+    }
+
 }

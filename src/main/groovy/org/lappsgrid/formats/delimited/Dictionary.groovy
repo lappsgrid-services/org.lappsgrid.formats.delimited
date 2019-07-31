@@ -12,6 +12,10 @@ class Dictionary {
         }
     }
 
+    int size() {
+        return dictionary.size()
+    }
+
     int lookup(String token) {
         Integer i = dictionary.get(token)
         if (i == null) {

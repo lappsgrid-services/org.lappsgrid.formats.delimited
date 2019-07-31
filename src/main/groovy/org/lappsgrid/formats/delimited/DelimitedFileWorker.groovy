@@ -30,7 +30,11 @@ class DelimitedFileWorker extends MessageBox {
     Object lock
 
     DelimitedFileWorker() {
-        super(config.EXCHANGE, config.MAILBOX, config.RABBIT_HOST)
+        super(config.MAILBOX)
+    }
+    
+    DelimitedFileWorker(String mailbox) {
+        super(config.EXCHANGE, mailbox, config.RABBIT_HOST)
 //        annotator = new WordShapeAnnotator()
         po = new PostOffice(config.EXCHANGE, config.RABBIT_HOST)
         logger.info("Started the DelimitedFileWorker service.")
@@ -66,6 +70,8 @@ class DelimitedFileWorker extends MessageBox {
             }
         }
 
+        logger.debug("Size: {} Sep: {}", size, sep)
+
         Data data = Serializer.parse(message.body)
         Dictionary dictionary = null
         List<String> strings = (List) data.getParameter("dictionary")
@@ -74,7 +80,7 @@ class DelimitedFileWorker extends MessageBox {
         }
         Container container = new Container(data.payload)
 //        annotator.process(container)
-        Writer writer = new Writer(dictionary,size, sep)
+        Writer writer = new Writer(size, sep, dictionary)
         String tsv = writer.process(container)
         data = new Data(Uri.TSV, tsv)
         message.body(data.asJson())
