@@ -30,9 +30,9 @@ class DelimitedFileWorker extends MessageBox {
     Object lock
 
     DelimitedFileWorker() {
-        super(config.MAILBOX)
+        this(config.MAILBOX)
     }
-    
+
     DelimitedFileWorker(String mailbox) {
         super(config.EXCHANGE, mailbox, config.RABBIT_HOST)
 //        annotator = new WordShapeAnnotator()
