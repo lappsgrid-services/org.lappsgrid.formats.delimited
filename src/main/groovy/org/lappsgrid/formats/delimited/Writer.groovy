@@ -17,11 +17,13 @@ class Writer {
     private String sep
     private int windowSize
     private String docId
+    private Dictionary dictionary
 
-    Writer(int windowSize=1, String sep='\t') {
+    Writer(int windowSize=1, String sep='\t', Dictionary dictionary = null) {
         this.sep = sep
         this.windowSize = windowSize
         this.shapeAnnotator = new WordShapeAnnotator()
+        this.dictionary = dictionary
     }
 
     String process(Container container) {
@@ -72,11 +74,24 @@ class Writer {
     }
 
     String print_entity(Annotation a) {
-        return [ a.features.word, a.start, a.end, docId, a.features.pos, a.features.shape ].join(sep)
+        if (dictionary == null) {
+            return [a.features.word, a.start, a.end, docId, a.features.pos, a.features.shape].join(sep)
+        }
+        int word = dictionary.lookup(a.features.word)
+        int id = dictionary.lookup(docId)
+        int pos = dictionary.lookup(a.features.pos)
+        int shape = dictionary.lookup(a.features.shape)
+        return [word, a.start, a.end, id, pos, shape].join(sep)
     }
 
     String print(Annotation a) {
-        return [ a.features.word, a.features.pos, a.features.shape ].join(sep)
+        if (dictionary == null) {
+            return [ a.features.word, a.features.pos, a.features.shape ].join(sep)
+        }
+        int word = dictionary.lookup(a.features.word)
+        int pos = dictionary.lookup(a.features.pos)
+        int shape = dictionary.lookup(a.features.shape)
+        return [word, pos, shape].join(sep)
     }
 
     List<Annotation> combine(Container container) {
